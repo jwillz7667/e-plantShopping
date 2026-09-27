@@ -1,147 +1,167 @@
-/* LandingPage.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 .landing-page {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f8f8f8;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
-  background-size: 100% 100%;
+  min-height: 100svh;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(17, 49, 36, 0.96),
+      rgba(17, 49, 36, 0.83) 42%,
+      rgba(17, 49, 36, 0.04)
+    ),
+    url("/images/greenhouse.svg");
+  background-size: cover;
   background-position: center;
-  filter: brightness(0.8);
-}
-.content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
- top: 100px;
-  backdrop-filter: blur(4px);
-  background-color: rgba(0,0,0,0.5);
-  gap: 20px;
-}
-
-.landing_content {
- margin-top: 430px;
-  margin-left: 100px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  text-align: center;
-  /* background-color: red; */
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  color: #fbf8ed;
+  padding: 64px max(6vw, 24px) 28px;
 }
-
-.content p,
-.content h1 {
-  color: white;
+.landing-content {
+  max-width: 650px;
 }
-
-.content h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
 }
-
-.content p {
-  font-size: 25px;
+.landing-page h1 {
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  margin: 64px 0 28px;
+  font-weight: 400;
 }
-
-.divider {
-  width: 50px;
-  height: 2px;
-  background-color: #4caf50;
-  margin: 10px 0;
+.landing-page h1 em {
+  color: #d5e3a3;
+  font-weight: 400;
 }
-
-.get-started-button {
-  padding: 15px 25px;
-  font-size: 23px;
-  border: none;
+.landing-intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 460px;
+}
+.primary-button {
+  background: #244f39;
+  color: #fff;
+  border: 1px solid transparent;
   border-radius: 5px;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 40px;
+  padding: 16px 24px;
+  font-weight: 650;
+  display: inline-flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
 }
-
-.get-started-button:hover {
-  background-color: #45a049;
+.primary-button:hover {
+  background: #143b28;
 }
-
-/* ProductList.css */
-
-.product-list-container {
+.primary-button:disabled {
+  background: #d8ddd8;
+  color: #647169;
+  cursor: not-allowed;
+}
+.landing-page .primary-button {
+  background: #d5e3a3;
+  color: #173c2b;
+  margin: 16px 0 30px;
+}
+.landing-page .primary-button:hover {
+  background: #e7efc9;
+}
+.about-us {
+  max-width: 490px;
+  border-top: 1px solid #aabda74d;
+  padding-top: 14px;
+}
+.about-us h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.about-us p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #d7dfd3;
+}
+.landing-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  margin-top: 60px;
+}
+.landing-caption span:last-child {
+  font-style: italic;
+  letter-spacing: 0;
+}
+.shop-content {
+  max-width: 1240px;
+  margin: auto;
+  padding: 48px 32px 80px;
+}
+.page-heading {
+  margin: 10px 0 36px;
+}
+.page-heading h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 16px 0;
+}
+.page-heading > p:last-child {
+  color: #65746a;
+}
+.site-footer {
+  border-top: 1px solid #d4dbd0;
+  padding: 30px max(4vw, 24px);
+  display: flex;
+  justify-content: space-between;
+  color: #516153;
+  font-size: 0.85rem;
+}
+.site-footer span:first-child {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+}
+.skip-link {
   position: absolute;
-  overflow-x: hidden;
-  top: 100vh;
-  /* Initially off-screen */
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.9);
-  /* Adjust background opacity as needed */
-  transition: top 0.5s ease;
-  /* Smooth transition for top property */
-  overflow-y: auto;
-  /* Enable vertical scrolling */
-  z-index: 2;
-  /* Ensure it's above landing page content */
-  backdrop-filter: blur(5px);
+  top: -100px;
+  left: 16px;
+  padding: 12px;
+  background: #fff;
+  z-index: 10;
 }
-
-.product-list-container.visible {
-  top: 0;
+.skip-link:focus {
+  top: 10px;
 }
-/* LandingPage.css */
-@media screen and (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .landing_content {
-    margin-top: 100px; /* Adjust as needed */
-    margin-left: 0;
-    width: 80%; /* Adjust as needed */
-    text-align: center;
-  }
-
-  .aboutus_container {
-    margin-top: 20px; /* Adjust as needed */
-    width: 80%; /* Adjust as needed */
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-
-@media screen and (max-width: 480px) {
-  .landing_content {
-    margin-top: 50px; /* Adjust as needed */
-    width: 90%; /* Adjust as needed */
+@media (max-width: 600px) {
+  .landing-page {
+    padding-top: 32px;
+    background-position: 65%;
   }
-
-  .aboutus_container {
-    width: 90%; /* Adjust as needed */
+  .landing-page h1 {
+    margin-top: 54px;
+  }
+  .landing-caption {
+    font-size: 0.6rem;
+  }
+  .shop-content {
+    padding: 26px 20px 60px;
+  }
+  .page-heading h1 {
+    font-size: 2.5rem;
   }
 }
